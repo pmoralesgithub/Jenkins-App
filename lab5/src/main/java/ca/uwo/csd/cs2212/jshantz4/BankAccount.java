@@ -1,9 +1,20 @@
 package ca.uwo.csd.cs2212.jshantz4;
 
-import junit.framework.Assert;
-import org.junit.Before;
-import org.junit.Test;
+public class BankAccount {
 
-public class TestBankAccount {
+  private double balance;
+
+  public BankAccount(double balance) {
+    this.balance = balance;
+  }
+
+  public double debit(double amount) {
+    if (balance < amount) {
+      amount = balance;
+    }
+
+    balance -= amount;
+    return amount;
+  }
 
 }
